@@ -1,0 +1,9 @@
+.venv/
+private/
+backups/
+static/assets/
+__pycache__/
+content/
+*.md
+
+node_modules/
