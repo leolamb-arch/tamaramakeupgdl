@@ -54,3 +54,13 @@ def media_list():
     with db() as c:
         rows = c.execute("SELECT * FROM media ORDER BY created DESC").fetchall()
     return jsonify([dict(r) for r in rows])
+
+
+@bp.post("/api/admin/full-content")
+def full_content():
+    return update("full")
+
+
+@bp.post("/api/admin/restore-publish/<int:version>")
+def restore_publish(version):
+    return update("restore-publish", version=version)
