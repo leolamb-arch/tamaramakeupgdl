@@ -36,7 +36,30 @@ def settings(data_dir=None):
     idle = int(os.environ.get("SESSION_IDLE_SECONDS", "1800"))
     if ttl <= 0 or idle <= 0:
         raise RuntimeError("Los tiempos de sesión deben ser positivos.")
+    # An explicit data directory keeps local tools/tests isolated from cloud data.
+    database_url = "" if data_dir is not None else os.environ.get("DATABASE_URL", "").strip()
+    storage_url = "" if data_dir is not None else os.environ.get("SUPABASE_URL", "").rstrip("/")
+    storage_key = "" if data_dir is not None else os.environ.get("SUPABASE_SECRET_KEY", "")
+    bucket = "" if data_dir is not None else os.environ.get("SUPABASE_STORAGE_BUCKET", "")
+    if database_url and urlsplit(database_url).scheme not in ("postgres", "postgresql"):
+        raise RuntimeError("DATABASE_URL debe ser una conexión PostgreSQL.")
+    if any((storage_url, storage_key, bucket)) and not all((storage_url, storage_key, bucket)):
+        raise RuntimeError("Completa SUPABASE_URL, SUPABASE_SECRET_KEY y SUPABASE_STORAGE_BUCKET.")
+    if storage_url:
+        endpoint = urlsplit(storage_url)
+        if endpoint.scheme != "https" or not endpoint.hostname or endpoint.path or endpoint.query or endpoint.fragment or endpoint.username or endpoint.password:
+            raise RuntimeError("SUPABASE_URL debe ser un origen HTTPS sin ruta ni credenciales.")
+        if not storage_key.startswith("sb_secret_"):
+            raise RuntimeError("SUPABASE_SECRET_KEY debe ser una Secret key (sb_secret_).")
+        if not bucket or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-_" for c in bucket):
+            raise RuntimeError("Nombre de bucket inválido.")
+    if production and data_dir is None and os.environ.get("RENDER") == "true" and not all((database_url, storage_url, storage_key, bucket)):
+        raise RuntimeError("Render necesita PostgreSQL y Storage configurados; no se usarán datos temporales.")
     return dict(
+        DATABASE_URL=database_url,
+        SUPABASE_URL=storage_url,
+        SUPABASE_SECRET_KEY=storage_key,
+        SUPABASE_STORAGE_BUCKET=bucket,
         SECRET_KEY=secret,
         ORIGIN=origin,
         PRODUCTION=production,
