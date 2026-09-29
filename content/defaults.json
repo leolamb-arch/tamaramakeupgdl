@@ -1,0 +1,383 @@
+{
+  "texts": {
+    "t000": "Saltar al contenido",
+    "t001": "Inicio",
+    "t002": "Servicios",
+    "t003": "Cotizar",
+    "t004": "Contacto",
+    "t005": "   Admin",
+    "t006": "Agenda tu cita",
+    "t007": "☰",
+    "t008": " GUADALAJARA, JALISCO",
+    "t009": "Tamara Aldrete",
+    "t010": "Maquillaje profesional en Guadalajara",
+    "t011": "HEEEELLOOOO!! Soy Tamara y me encantaría poderte atender en tu próximo evento, para checar más info, pide una cotización y checar disponibilidad 💗💗✨",
+    "t012": "Servicios de maquillaje   ↓",
+    "t013": "¡Agenda tu cita!",
+    "t014": "Bodas · XV años · Graduaciones · Sesiones de fotos · Eventos sociales",
+    "t015": "◎   @tamara.makeupart",
+    "t016": "Catálogo",
+    "t017": "Servicios de maquillaje",
+    "t018": "Cada servicio se adapta a tu estilo, tu piel y tu evento. Toca una tarjeta para ver la galería de trabajos y los detalles.",
+    "t019": "Quiz interactivo",
+    "t020": "Encuentra tu look ideal",
+    "t021": "Responde 2 preguntas y te recomiendo el servicio perfecto para tu evento.",
+    "t022": "1",
+    "t023": " ¿Qué tipo de evento tienes?",
+    "t024": "2",
+    "t025": " ¿Necesitas peinado o servicios para acompañantes?",
+    "t026": "✧ Ver mi look recomendado",
+    "t027": "Responde las 2 preguntas para ver tu recomendación.",
+    "t028": "Cotización",
+    "t029": "Reserva tu cita y aparta tu fecha",
+    "t030": "Cuéntame sobre tu evento, elige tu servicio y la fecha en el calendario. Los campos con * son obligatorios.",
+    "t031": "Copia local: puedes preparar un resumen. La disponibilidad no está verificada y no se realizan reservas ni pagos.",
+    "t032": "1 Tus datos",
+    "t033": "2 Resumen",
+    "t034": "3 Anticipo",
+    "t035": "4 Confirmación",
+    "t036": "Nombre completo *",
+    "t037": "Teléfono o WhatsApp *",
+    "t038": "Correo electrónico (opcional)",
+    "t039": "Servicio de interés *",
+    "t040": "Selecciona un servicio",
+    "t041": "Personas a maquillar *",
+    "t042": "¿Dónde se realizará la sesión? *",
+    "t043": "Elige si prefieres venir al estudio o que yo vaya a tu ubicación.",
+    "t044": " La sesión será en el estudio de Tamara",
+    "t045": " La sesión será en otra ubicación",
+    "t046": "Dirección de la sesión *",
+    "t047": "Fecha del evento *",
+    "t048": "Calendario de demostración; la agenda real requiere conexión. No puedes elegir fechas pasadas.",
+    "t049": "‹",
+    "t050": "›",
+    "t051": "lu",
+    "t052": "ma",
+    "t053": "mi",
+    "t054": "ju",
+    "t055": "vi",
+    "t056": "sá",
+    "t057": "do",
+    "t058": "Selecciona una fecha en el calendario",
+    "t059": "Hora del evento *",
+    "t060": "Horarios de ejemplo, sujetos a confirmación.",
+    "t061": "Comentarios sobre el look deseado (opcional)",
+    "t062": "Ver resumen y continuar →",
+    "t063": "Tus datos permanecen en esta página; no se envían ni se guardan.",
+    "t064": "Cotización grupal",
+    "t065": "Calcula tu cotización para grupos y novias",
+    "t066": "Ajusta el número de acompañantes y los servicios adicionales. El total se actualiza al instante.",
+    "t067": "Acompañantes / damas adicionales",
+    "t068": "$800.00 por persona adicional.",
+    "t069": "−",
+    "t070": "0",
+    "t071": "+",
+    "t072": "Servicios adicionales",
+    "t073": " Servicio de Peinado ",
+    "t074": "+$600.00 por persona",
+    "t075": " Prueba de Maquillaje Novia ",
+    "t076": "+$1,200.00",
+    "t077": "DESGLOSE",
+    "t078": "Enviar esta cotización por WhatsApp",
+    "t079": "Contacto",
+    "t080": "Hablemos de tu evento",
+    "t081": " Servicio a domicilio en Guadalajara y su área metropolitana: Zapopan, Tlaquepaque, Tonalá, Tlajomulco de Zúñiga y El Salto.",
+    "t082": "WhatsApp ↗",
+    "t083": "Instagram",
+    "t084": "Facebook",
+    "t085": "TikTok",
+    "t086": "Lo que dicen mis clientas",
+    "t087": "★★★★★",
+    "t088": "Mariana G.",
+    "t089": "Boda en Zapopan",
+    "t090": "★★★★★",
+    "t091": "Fernanda R.",
+    "t092": "XV años en Tlaquepaque",
+    "t093": "★★★★★",
+    "t094": "Alejandra M.",
+    "t095": "Sesión de fotos en Guadalajara",
+    "t096": "WhatsApp ↗",
+    "t097": "Instagram",
+    "t098": "Facebook",
+    "t099": "TikTok",
+    "t100": "Maquillaje profesional a domicilio. Agenda sujeta a disponibilidad; se recomienda reservar con 2–4 semanas de anticipación.",
+    "t101": "© ",
+    "t102": "2026",
+    "t103": " Tamara Aldrete · Maquillaje profesional en Guadalajara, Jalisco, México",
+    "t104": "×",
+    "t105": "¿Dudas sobre tu evento?",
+    "t106": "¡Hablemos aquí!",
+    "t107": "×",
+    "t108": "Inicio",
+    "t109": "Servicios",
+    "t110": "Cotizar",
+    "t111": "Contacto",
+    "t112": "Tutorial de bienvenida",
+    "t113": "Admin",
+    "t114": "Agenda tu cita",
+    "t115": "×",
+    "t116": "×",
+    "t117": "+",
+    "t118": "−",
+    "t119": "‹",
+    "t120": "›"
+  },
+  "seo": {
+    "title": "Tamara Aldrete · Maquillaje profesional en Guadalajara",
+    "description": "Copia local de Tamara Aldrete, maquillaje profesional en Guadalajara."
+  },
+  "images": {
+    "assets/logo-placeholder.svg": {
+      "src": "assets/logo-placeholder.svg",
+      "alt": "Tamara Aldrete — logotipo pendiente",
+      "x": 50,
+      "y": 50
+    },
+    "assets/portada-retrato.svg": {
+      "src": "assets/portada-retrato.svg",
+      "alt": "Placeholder del retrato de portada",
+      "x": 50,
+      "y": 50
+    },
+    "assets/testimonio-mariana.svg": {
+      "src": "assets/testimonio-mariana.svg",
+      "alt": "Placeholder de Mariana",
+      "x": 50,
+      "y": 50
+    },
+    "assets/testimonio-fernanda.svg": {
+      "src": "assets/testimonio-fernanda.svg",
+      "alt": "Placeholder de Fernanda",
+      "x": 50,
+      "y": 50
+    },
+    "assets/testimonio-alejandra.svg": {
+      "src": "assets/testimonio-alejandra.svg",
+      "alt": "Placeholder de Alejandra",
+      "x": 50,
+      "y": 50
+    },
+    "assets/social-galeria-01.svg": {
+      "src": "assets/social-galeria-01.svg",
+      "alt": "Maquillaje social",
+      "x": 50,
+      "y": 50
+    },
+    "assets/social-galeria-02.svg": {
+      "src": "assets/social-galeria-02.svg",
+      "alt": "Maquillaje social",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-01.svg": {
+      "src": "assets/novia-galeria-01.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-02.svg": {
+      "src": "assets/novia-galeria-02.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-03.svg": {
+      "src": "assets/novia-galeria-03.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-04.svg": {
+      "src": "assets/novia-galeria-04.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-05.svg": {
+      "src": "assets/novia-galeria-05.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-06.svg": {
+      "src": "assets/novia-galeria-06.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/novia-galeria-07.svg": {
+      "src": "assets/novia-galeria-07.svg",
+      "alt": "Maquillaje de novia",
+      "x": 50,
+      "y": 50
+    },
+    "assets/editorial-galeria-01.svg": {
+      "src": "assets/editorial-galeria-01.svg",
+      "alt": "Maquillaje editorial y fotográfico",
+      "x": 50,
+      "y": 50
+    },
+    "assets/editorial-galeria-02.svg": {
+      "src": "assets/editorial-galeria-02.svg",
+      "alt": "Maquillaje editorial y fotográfico",
+      "x": 50,
+      "y": 50
+    },
+    "assets/editorial-galeria-03.svg": {
+      "src": "assets/editorial-galeria-03.svg",
+      "alt": "Maquillaje editorial y fotográfico",
+      "x": 50,
+      "y": 50
+    },
+    "assets/eventos-galeria-01.svg": {
+      "src": "assets/eventos-galeria-01.svg",
+      "alt": "Maquillaje para eventos",
+      "x": 50,
+      "y": 50
+    }
+  },
+  "services": [
+    {
+      "name": "Maquillaje social",
+      "description": "Un maquillaje favorecedor y de larga duración para cualquier celebración: cenas, fiestas, bautizos o reuniones especiales. Adaptamos la intensidad del look a tu estilo y al momento del día.",
+      "duration": "45–60 min aprox.",
+      "includes": [
+        "Preparación de piel",
+        "Pestañas postizas",
+        "Fijación de larga duración"
+      ],
+      "price": "",
+      "price_amount": 400,
+      "short": "Look impecable para fiestas, cenas y celebraciones.",
+      "slug": "social",
+      "cover_index": 0,
+      "images": [
+        "assets/social-galeria-01.svg",
+        "assets/social-galeria-02.svg"
+      ],
+      "status": "visible"
+    },
+    {
+      "name": "Maquillaje de novia",
+      "description": "Servicio premium para novias: prueba previa, maquillaje de larga duración resistente a lágrimas y retoques antes de la recepción. Un look luminoso que fotografía hermoso y se siente ligero.",
+      "duration": "90–120 min + prueba previa",
+      "includes": [
+        "Prueba de maquillaje",
+        "Pestañas premium",
+        "Kit de retoque",
+        "Acompañamiento el día del evento"
+      ],
+      "price": "",
+      "price_amount": 3500,
+      "short": "Radiante y serena en el día más importante.",
+      "slug": "novia",
+      "cover_index": 3,
+      "images": [
+        "assets/novia-galeria-01.svg",
+        "assets/novia-galeria-02.svg",
+        "assets/novia-galeria-03.svg",
+        "assets/novia-galeria-04.svg",
+        "assets/novia-galeria-05.svg",
+        "assets/novia-galeria-06.svg",
+        "assets/novia-galeria-07.svg"
+      ],
+      "status": "visible"
+    },
+    {
+      "name": "Maquillaje de quince años",
+      "description": "Un look dulce y sofisticado, pensado para durar toda la fiesta y lucir espectacular en fotos y video. Incluye prueba previa para definir juntas el estilo perfecto.",
+      "duration": "75–90 min + prueba previa",
+      "includes": [
+        "Prueba de maquillaje",
+        "Pestañas postizas",
+        "Fijación para toda la fiesta"
+      ],
+      "price": "$1,500 – $2,800 MXN",
+      "price_amount": 2000,
+      "short": "Fresco, juvenil y elegante para su gran noche.",
+      "slug": "xv",
+      "cover_index": 0,
+      "images": [],
+      "status": "visible"
+    },
+    {
+      "name": "Maquillaje editorial y fotográfico",
+      "description": "Maquillaje diseñado para fotografía profesional, editoriales, pasarelas y contenido creativo. Trabajo de precisión que responde a la luz, al concepto y a la dirección de arte.",
+      "duration": "Según concepto",
+      "includes": [
+        "Diseño según concepto",
+        "Técnicas para foto y video",
+        "Retoques durante la sesión"
+      ],
+      "price": "",
+      "price_amount": 1800,
+      "short": "Looks de alto impacto para cámara y pasarela.",
+      "slug": "editorial",
+      "cover_index": 2,
+      "images": [
+        "assets/editorial-galeria-01.svg",
+        "assets/editorial-galeria-02.svg",
+        "assets/editorial-galeria-03.svg"
+      ],
+      "status": "visible"
+    },
+    {
+      "name": "Maquillaje para eventos",
+      "description": "Para galas, premiaciones, graduaciones de noche y eventos formales. Un acabado pulido y sofisticado que resiste horas de celebración, con opción de servicio para grupos.",
+      "duration": "60–90 min aprox.",
+      "includes": [
+        "Preparación de piel",
+        "Pestañas postizas",
+        "Servicio para grupos disponible"
+      ],
+      "price": "",
+      "price_amount": 1200,
+      "short": "Glamour para galas, alfombras y noches especiales.",
+      "slug": "eventos",
+      "cover_index": 0,
+      "images": [
+        "assets/eventos-galeria-01.svg"
+      ],
+      "status": "visible"
+    },
+    {
+      "name": "Graduaciones",
+      "description": "Maquillaje natural y luminoso que luce impecable bajo el birrete, en la ceremonia y en la fiesta. Paquetes especiales para graduadas y familiares.",
+      "duration": "60–75 min aprox.",
+      "includes": [
+        "Preparación de piel",
+        "Fijación de larga duración",
+        "Descuento para grupos"
+      ],
+      "price": "",
+      "price_amount": 1000,
+      "short": "Un recuerdo fotográfico que dura para siempre.",
+      "slug": "graduaciones",
+      "cover_index": 0,
+      "images": [],
+      "status": "visible"
+    }
+  ],
+  "theme": {
+    "background": "#ffcd75",
+    "primary": "#8d4959",
+    "foreground": "#332924",
+    "gold": "#bd944c",
+    "secondary": "#f1e4e6",
+    "muted": "#766860",
+    "border": "#e0d8d2",
+    "font": "Outfit",
+    "heading": "Pinyon Script"
+  },
+  "settings": {
+    "whatsapp": "",
+    "contactWhatsapp": "523330144428",
+    "instagram": "",
+    "facebook": "",
+    "tiktok": "",
+    "base": 3500,
+    "companion": 800,
+    "hair": 600,
+    "trial": 1200
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "rr": {
+    "name": "Tamara Aldrete",
+    "heroTitleSuffix": "Maquillaje profesional en Guadalajara",
+    "tagline": "Resalta tu belleza natural para cada ocasión especial",
+    "city": "Guadalajara, Jalisco",
+    "whatsapp": "5213300000000",
+    "whatsappDisplay": "+52 1 33 0000 0000",
+    "email": "hola@tumaquillista.mx",
+    "socials": {
+      "whatsapp": "https://wa.me/5213300000000",
+      "instagram": "https://instagram.com/tuusuario",
+      "facebook": "https://facebook.com/tupagina",
+      "tiktok": "https://tiktok.com/@tuusuario"
+    },
+    "coverage": "Servicio a domicilio en Guadalajara y su área metropolitana: Zapopan, Tlaquepaque, Tonalá, Tlajomulco de Zúñiga y El Salto.",
+    "heroImages": {
+      "main": "",
+      "mainAlt": "Retrato de belleza con maquillaje profesional en tonos rosa empolvado",
+      "detail": "",
+      "detailAlt": "Herramientas de maquillaje profesional en tonos rosa y dorado"
+    },
+    "testimonials": [
+      {
+        "name": "Mariana G.",
+        "event": "Boda en Zapopan",
+        "photo": "",
+        "rating": 5
+      },
+      {
+        "name": "Fernanda R.",
+        "event": "XV años en Tlaquepaque",
+        "photo": "",
+        "rating": 5
+      },
+      {
+        "name": "Alejandra M.",
+        "event": "Sesión de fotos en Guadalajara",
+        "photo": "",
+        "rating": 5
+      }
+    ],
+    "locationConfig": {
+      "sectionTitle": "¿Dónde se realizará la sesión?",
+      "sectionInstructions": "Elige si prefieres venir al estudio o que yo vaya a tu ubicación.",
+      "studioOptionLabel": "La sesión será en el estudio de Tamara",
+      "externalOptionLabel": "La sesión será en otra ubicación",
+      "studio": {
+        "address": "Av. Adolfo López Mateos 1234, Col. Americana, Guadalajara, Jalisco, 44160",
+        "title": "Estudio de Tamara",
+        "instructions": "Te espero en mi estudio. Copia la dirección completa para llegar sin contratiempos.",
+        "copyLabel": "Copiar dirección",
+        "copiedLabel": "¡Dirección copiada!"
+      },
+      "external": {
+        "title": "Dirección de la sesión",
+        "instructions": "Captura la dirección completa donde se realizará la sesión. Todos los campos marcados con * son obligatorios.",
+        "fields": [
+          {
+            "id": "street",
+            "label": "Calle",
+            "required": true
+          },
+          {
+            "id": "number",
+            "label": "Número exterior",
+            "required": true
+          },
+          {
+            "id": "interior",
+            "label": "Número interior / depto (opcional)",
+            "required": false
+          },
+          {
+            "id": "neighborhood",
+            "label": "Colonia",
+            "required": true
+          },
+          {
+            "id": "city",
+            "label": "Municipio / ciudad",
+            "required": true
+          },
+          {
+            "id": "state",
+            "label": "Estado",
+            "required": true
+          },
+          {
+            "id": "zip",
+            "label": "Código postal",
+            "required": true
+          },
+          {
+            "id": "reference",
+            "label": "Referencia para llegar (opcional)",
+            "required": false
+          }
+        ],
+        "confirmTitle": "Confirma que la dirección es correcta",
+        "confirmInstructions": "Revisa con cuidado los datos antes de continuar. Una vez confirmados, se guardarán con tu reserva.",
+        "confirmLabel": "Sí, la dirección es correcta",
+        "editLabel": "Editar dirección",
+        "successMessage": "Dirección confirmada. Puedes continuar con tu reserva."
+      }
+    },
+    "footerNote": "Maquillaje profesional a domicilio. Agenda sujeta a disponibilidad; se recomienda reservar con 2–4 semanas de anticipación."
+  },
+  "Nt": {
+    "basePrice": 3500,
+    "perPerson": 800,
+    "baseLabel": "Paquete novia (base)",
+    "perPersonLabel": "Acompañante / dama adicional",
+    "addons": [
+      {
+        "id": "peinado",
+        "label": "Servicio de Peinado",
+        "price": 600,
+        "perPerson": true
+      },
+      {
+        "id": "prueba",
+        "label": "Prueba de Maquillaje Novia",
+        "price": 1200,
+        "perPerson": false
+      }
+    ],
+    "currency": {
+      "code": "MXN",
+      "locale": "es-MX"
+    },
+    "texts": {
+      "sectionLabel": "Cotización grupal",
+      "title": "Calcula tu cotización para grupos y novias",
+      "description": "Ajusta el número de acompañantes y los servicios adicionales. El total se actualiza al instante.",
+      "counterLabel": "Acompañantes / damas adicionales",
+      "counterNote": "{price} por persona adicional.",
+      "addonsLabel": "Servicios adicionales",
+      "breakdownLabel": "Desglose",
+      "totalLabel": "Total estimado",
+      "button": "Enviar esta cotización por WhatsApp",
+      "whatsappGreeting": "¡Hola, {name}! Quiero una cotización para mi evento.",
+      "whatsappExtrasLabel": "Acompañantes adicionales",
+      "whatsappTotalLabel": "Total estimado",
+      "whatsappFooter": "¿Me pueden confirmar disponibilidad y detalles?"
+    }
+  },
+  "zd": [
+    {
+      "id": "evento",
+      "question": "¿Qué tipo de evento tienes?",
+      "options": [
+        {
+          "id": "boda",
+          "label": "Boda",
+          "service": "novia"
+        },
+        {
+          "id": "noche",
+          "label": "Fiesta de Noche",
+          "service": "eventos"
+        },
+        {
+          "id": "dia",
+          "label": "Evento de Día",
+          "service": "social"
+        },
+        {
+          "id": "fotos",
+          "label": "Sesión de Fotos",
+          "service": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "extras",
+      "question": "¿Necesitas peinado o servicios para acompañantes?",
+      "options": [
+        {
+          "id": "solo",
+          "label": "Solo maquillaje"
+        },
+        {
+          "id": "peinado",
+          "label": "Maquillaje y Peinado"
+        },
+        {
+          "id": "solopeinado",
+          "label": "Solo Peinado"
+        },
+        {
+          "id": "grupal",
+          "label": "Paquete Grupal"
+        }
+      ]
+    }
+  ],
+  "$d": {
+    "solo": "Solo maquillaje, sin servicios adicionales.",
+    "peinado": "Incluye peinado además del maquillaje.",
+    "solopeinado": "Solo peinado, sin maquillaje.",
+    "grupal": "Paquete grupal: pregunta por descuentos para acompañantes."
+  },
+  "Vd": {
+    "sectionLabel": "Quiz interactivo",
+    "title": "Encuentra tu look ideal",
+    "description": "Responde 2 preguntas y te recomiendo el servicio perfecto para tu evento.",
+    "button": "Ver mi look recomendado",
+    "noteIncomplete": "Responde las 2 preguntas para ver tu recomendación.",
+    "resultLabel": "Tu look ideal",
+    "priceLabel": "Precio estimado",
+    "durationLabel": "Tiempo requerido",
+    "servicesLabel": "Servicios",
+    "ctaButton": "Reservar este look",
+    "resetButton": "Volver a responder"
+  },
+  "DU": [
+    {
+      "group": "Hero (inicio)",
+      "items": [
+        {
+          "k": "name",
+          "label": "Nombre de la marca / maquillista",
+          "type": "text"
+        },
+        {
+          "k": "heroTitleSuffix",
+          "label": "Subtítulo principal (bajo el nombre)",
+          "type": "text"
+        },
+        {
+          "k": "tagline",
+          "label": "Frase de bienvenida",
+          "type": "text"
+        },
+        {
+          "k": "city",
+          "label": "Ciudad / ubicación (etiqueta del hero)",
+          "type": "text"
+        },
+        {
+          "k": "heroButtonPrimary",
+          "label": "Texto del botón principal",
+          "type": "text"
+        },
+        {
+          "k": "heroButtonSecondary",
+          "label": "Texto del botón secundario",
+          "type": "text"
+        },
+        {
+          "k": "heroSubtext",
+          "label": "Línea bajo los botones (tipos de evento)",
+          "type": "text"
+        },
+        {
+          "k": "instagramHandle",
+          "label": "Usuario de Instagram (etiqueta del hero)",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "group": "Sección de servicios",
+      "items": [
+        {
+          "k": "servicesLabel",
+          "label": "Etiqueta pequeña",
+          "type": "text"
+        },
+        {
+          "k": "servicesTitle",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "k": "servicesDescription",
+          "label": "Descripción",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "group": "Sección de cotización",
+      "items": [
+        {
+          "k": "quoteLabel",
+          "label": "Etiqueta pequeña",
+          "type": "text"
+        },
+        {
+          "k": "quoteTitle",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "k": "quoteDescription",
+          "label": "Descripción",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "group": "Sección de contacto",
+      "items": [
+        {
+          "k": "contactLabel",
+          "label": "Etiqueta pequeña",
+          "type": "text"
+        },
+        {
+          "k": "contactTitle",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "k": "coverage",
+          "label": "Texto de cobertura / zona de servicio",
+          "type": "textarea"
+        },
+        {
+          "k": "testimonialsTitle",
+          "label": "Título de testimonios",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "group": "Contacto y redes",
+      "items": [
+        {
+          "k": "whatsapp",
+          "label": "Número de WhatsApp (formato internacional, sin + ni espacios)",
+          "type": "text"
+        },
+        {
+          "k": "whatsappDisplay",
+          "label": "Número de WhatsApp (como se muestra)",
+          "type": "text"
+        },
+        {
+          "k": "email",
+          "label": "Correo de contacto",
+          "type": "text"
+        },
+        {
+          "k": "socials.whatsapp",
+          "label": "Enlace de WhatsApp",
+          "type": "text"
+        },
+        {
+          "k": "socials.instagram",
+          "label": "Enlace de Instagram",
+          "type": "text"
+        },
+        {
+          "k": "socials.facebook",
+          "label": "Enlace de Facebook",
+          "type": "text"
+        },
+        {
+          "k": "socials.tiktok",
+          "label": "Enlace de TikTok",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "group": "Footer",
+      "items": [
+        {
+          "k": "footerNote",
+          "label": "Nota del pie de página",
+          "type": "textarea"
+        }
+      ]
+    }
+  ],
+  "yr": {
+    "titleFont": "Cormorant Garamond",
+    "bodyFont": "Jost",
+    "colors": {
+      "primary": "346 32% 42%",
+      "secondary": "350 32% 92%",
+      "background": "30 33% 96%",
+      "foreground": "20 18% 17%",
+      "gold": "38 46% 52%",
+      "button": "346 32% 42%"
+    }
+  }
+}
