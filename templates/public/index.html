@@ -1,0 +1,657 @@
+<!doctype html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <meta
+            content="Copia local de Tamara Aldrete, maquillaje profesional en Guadalajara."
+            name="description"
+        />
+        <title>Tamara Aldrete · Maquillaje profesional en Guadalajara</title>
+        <link href="assets/logo-placeholder.svg" rel="icon" />
+        <link href="css/fonts.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script type="module" src="/js/main.js"></script>
+    </head>
+
+    <body>
+        <a class="skip" href="#inicio"><cms-text data-cms="t000">Saltar al contenido</cms-text></a>
+        <header>
+            <nav aria-label="Navegación principal" class="container navbar">
+                <a aria-label="Tamara Aldrete" href="#inicio"
+                    ><img
+                        alt="Tamara Aldrete — logotipo pendiente"
+                        class="nav-logo"
+                        data-image="assets/logo-placeholder.svg"
+                        src="assets/logo-placeholder.svg"
+                /></a>
+                <div class="desktop-nav">
+                    <a href="#inicio"><cms-text data-cms="t001">Inicio</cms-text></a
+                    ><a href="#servicios"><cms-text data-cms="t002">Servicios</cms-text></a
+                    ><a href="#cotizar"><cms-text data-cms="t003">Cotizar</cms-text></a
+                    ><a href="#contacto"><cms-text data-cms="t004">Contacto</cms-text></a
+                    ><button aria-label="Abrir tutorial de bienvenida" class="circle" data-tutorial>
+                        <svg
+                            aria-hidden="true"
+                            class="icon"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 24 24"
+                        >
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3h.01"></path>
+                        </svg></button
+                    ><button class="pill white" data-admin>
+                        <svg
+                            aria-hidden="true"
+                            class="icon"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 24 24"
+                        >
+                            <rect height="12" rx="2" width="16" x="4" y="10"></rect>
+                            <path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v2"></path></svg
+                        ><cms-text data-cms="t005">   Admin</cms-text></button
+                    ><a class="pill primary" href="#servicios"
+                        ><cms-text data-cms="t006">Agenda tu cita</cms-text></a
+                    >
+                </div>
+                <button
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                    class="circle mobile-only"
+                    id="menu-open"
+                >
+                    <cms-text data-cms="t007">☰</cms-text>
+                </button>
+            </nav>
+        </header>
+        <main>
+            <section class="hero" id="inicio">
+                <div class="container hero-grid">
+                    <div>
+                        <img
+                            alt="Tamara Aldrete — colocar logotipo original"
+                            class="hero-logo"
+                            data-image="assets/logo-placeholder.svg"
+                            src="assets/logo-placeholder.svg"
+                        />
+                        <p class="location">
+                            <svg
+                                aria-hidden="true"
+                                class="icon"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                viewbox="0 0 24 24"
+                            >
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle></svg
+                            ><cms-text data-cms="t008"> GUADALAJARA, JALISCO</cms-text>
+                        </p>
+                        <h1>
+                            <cms-text data-cms="t009">Tamara Aldrete</cms-text
+                            ><span
+                                ><cms-text data-cms="t010"
+                                    >Maquillaje profesional en Guadalajara</cms-text
+                                ></span
+                            >
+                        </h1>
+                        <p class="hero-description">
+                            <cms-text data-cms="t011"
+                                >HEEEELLOOOO!! Soy Tamara y me encantaría poderte atender en tu
+                                próximo evento, para checar más info, pide una cotización y checar
+                                disponibilidad 💗💗✨</cms-text
+                            >
+                        </p>
+                        <div class="hero-actions">
+                            <a class="pill primary" href="#servicios"
+                                ><cms-text data-cms="t012">Servicios de maquillaje   ↓</cms-text></a
+                            ><a class="pill outline" href="#cotizar"
+                                ><cms-text data-cms="t013">¡Agenda tu cita!</cms-text></a
+                            >
+                        </div>
+                        <p class="small muted">
+                            <cms-text data-cms="t014"
+                                >Bodas · XV años · Graduaciones · Sesiones de fotos · Eventos
+                                sociales</cms-text
+                            >
+                        </p>
+                    </div>
+                    <div class="hero-picture">
+                        <!-- Sustituir assets/portada-retrato.svg por tu retrato; mantener 3:4 y object-fit:cover. --><img
+                            alt="Placeholder del retrato de portada"
+                            data-image="assets/portada-retrato.svg"
+                            src="assets/portada-retrato.svg"
+                        /><button class="instagram-tag" data-social="Instagram">
+                            <cms-text data-cms="t015">◎   @tamara.makeupart</cms-text>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section id="servicios">
+                <div class="container">
+                    <p class="eyebrow"><cms-text data-cms="t016">Catálogo</cms-text></p>
+                    <h2><cms-text data-cms="t017">Servicios de maquillaje</cms-text></h2>
+                    <p class="section-intro">
+                        <cms-text data-cms="t018"
+                            >Cada servicio se adapta a tu estilo, tu piel y tu evento. Toca una
+                            tarjeta para ver la galería de trabajos y los detalles.</cms-text
+                        >
+                    </p>
+                    <div class="catalog" id="catalog"></div>
+                </div>
+            </section>
+            <section id="tu-look">
+                <div class="narrow">
+                    <p class="eyebrow"><cms-text data-cms="t019">Quiz interactivo</cms-text></p>
+                    <h2><cms-text data-cms="t020">Encuentra tu look ideal</cms-text></h2>
+                    <p class="section-intro">
+                        <cms-text data-cms="t021"
+                            >Responde 2 preguntas y te recomiendo el servicio perfecto para tu
+                            evento.</cms-text
+                        >
+                    </p>
+                    <div class="panel quiz">
+                        <fieldset>
+                            <legend>
+                                <span class="step"><cms-text data-cms="t022">1</cms-text></span
+                                ><cms-text data-cms="t023"> ¿Qué tipo de evento tienes?</cms-text>
+                            </legend>
+                            <div class="choices" id="events"></div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                <span class="step"><cms-text data-cms="t024">2</cms-text></span
+                                ><cms-text data-cms="t025">
+                                    ¿Necesitas peinado o servicios para acompañantes?</cms-text
+                                >
+                            </legend>
+                            <div class="choices" id="extras"></div>
+                        </fieldset>
+                        <button class="pill primary" disabled id="recommend">
+                            <cms-text data-cms="t026">✧ Ver mi look recomendado</cms-text>
+                        </button>
+                        <p class="small muted" id="quiz-help">
+                            <cms-text data-cms="t027"
+                                >Responde las 2 preguntas para ver tu recomendación.</cms-text
+                            >
+                        </p>
+                        <div aria-live="polite" id="quiz-result"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="tinted" id="cotizar">
+                <div class="narrow">
+                    <p class="eyebrow"><cms-text data-cms="t028">Cotización</cms-text></p>
+                    <h2><cms-text data-cms="t029">Reserva tu cita y aparta tu fecha</cms-text></h2>
+                    <p class="section-intro">
+                        <cms-text data-cms="t030"
+                            >Cuéntame sobre tu evento, elige tu servicio y la fecha en el
+                            calendario. Los campos con * son obligatorios.</cms-text
+                        >
+                    </p>
+                    <p class="notice">
+                        <cms-text data-cms="t031"
+                            >Copia local: puedes preparar un resumen. La disponibilidad no está
+                            verificada y no se realizan reservas ni pagos.</cms-text
+                        >
+                    </p>
+                    <ol class="steps">
+                        <li class="active"><cms-text data-cms="t032">1 Tus datos</cms-text></li>
+                        <li><cms-text data-cms="t033">2 Resumen</cms-text></li>
+                        <li><cms-text data-cms="t034">3 Anticipo</cms-text></li>
+                        <li><cms-text data-cms="t035">4 Confirmación</cms-text></li>
+                    </ol>
+                    <form class="panel" id="booking">
+                        <div class="form-grid">
+                            <label
+                                ><cms-text data-cms="t036">Nombre completo *</cms-text
+                                ><input
+                                    autocomplete="name"
+                                    id="nombre"
+                                    name="nombre"
+                                    placeholder="Ej. Ana Paula Hernández"
+                                    required /></label
+                            ><label
+                                ><cms-text data-cms="t037">Teléfono o WhatsApp *</cms-text
+                                ><input
+                                    autocomplete="tel"
+                                    name="telefono"
+                                    pattern="[+0-9 \(\)\-]{8,20}"
+                                    placeholder="Ej. 33 1234 5678"
+                                    required
+                                    type="tel" /></label
+                            ><label
+                                ><cms-text data-cms="t038">Correo electrónico (opcional)</cms-text
+                                ><input
+                                    autocomplete="email"
+                                    name="email"
+                                    placeholder="tucorreo@ejemplo.com"
+                                    type="email" /></label
+                            ><label
+                                ><cms-text data-cms="t039">Servicio de interés *</cms-text
+                                ><select id="servicio" name="servicio" required>
+                                    <option value="">
+                                        <cms-text data-cms="t040">Selecciona un servicio</cms-text>
+                                    </option>
+                                </select></label
+                            ><label
+                                ><cms-text data-cms="t041">Personas a maquillar *</cms-text
+                                ><input
+                                    max="100"
+                                    min="1"
+                                    name="personas"
+                                    required
+                                    step="1"
+                                    type="number"
+                                    value="1"
+                            /></label>
+                        </div>
+                        <fieldset>
+                            <legend>
+                                <cms-text data-cms="t042"
+                                    >¿Dónde se realizará la sesión? *</cms-text
+                                >
+                            </legend>
+                            <p class="small muted">
+                                <cms-text data-cms="t043"
+                                    >Elige si prefieres venir al estudio o que yo vaya a tu
+                                    ubicación.</cms-text
+                                >
+                            </p>
+                            <div class="location-choices">
+                                <label class="choice"
+                                    ><input
+                                        name="ubicacion"
+                                        required
+                                        type="radio"
+                                        value="Estudio de Tamara"
+                                    /><cms-text data-cms="t044">
+                                        La sesión será en el estudio de Tamara</cms-text
+                                    ></label
+                                ><label class="choice"
+                                    ><input
+                                        name="ubicacion"
+                                        required
+                                        type="radio"
+                                        value="Otra ubicación"
+                                    /><cms-text data-cms="t045">
+                                        La sesión será en otra ubicación</cms-text
+                                    ></label
+                                >
+                            </div>
+                            <label hidden id="address-wrap"
+                                ><cms-text data-cms="t046">Dirección de la sesión *</cms-text
+                                ><input
+                                    id="direccion"
+                                    name="direccion"
+                                    placeholder="Calle, número, colonia y municipio"
+                            /></label>
+                        </fieldset>
+                        <fieldset>
+                            <legend><cms-text data-cms="t047">Fecha del evento *</cms-text></legend>
+                            <p class="small muted">
+                                <cms-text data-cms="t048"
+                                    >Calendario de demostración; la agenda real requiere conexión.
+                                    No puedes elegir fechas pasadas.</cms-text
+                                >
+                            </p>
+                            <div class="calendar">
+                                <div class="calendar-head">
+                                    <button aria-label="Mes anterior" id="month-prev" type="button">
+                                        <cms-text data-cms="t049">‹</cms-text></button
+                                    ><strong aria-live="polite" id="month"></strong
+                                    ><button
+                                        aria-label="Mes siguiente"
+                                        id="month-next"
+                                        type="button"
+                                    >
+                                        <cms-text data-cms="t050">›</cms-text>
+                                    </button>
+                                </div>
+                                <div aria-hidden="true" class="weekdays">
+                                    <span><cms-text data-cms="t051">lu</cms-text></span
+                                    ><span><cms-text data-cms="t052">ma</cms-text></span
+                                    ><span><cms-text data-cms="t053">mi</cms-text></span
+                                    ><span><cms-text data-cms="t054">ju</cms-text></span
+                                    ><span><cms-text data-cms="t055">vi</cms-text></span
+                                    ><span><cms-text data-cms="t056">sá</cms-text></span
+                                    ><span><cms-text data-cms="t057">do</cms-text></span>
+                                </div>
+                                <div
+                                    aria-label="Fechas de demostración"
+                                    class="days"
+                                    id="days"
+                                    role="group"
+                                ></div>
+                            </div>
+                            <p aria-live="polite" class="small muted" id="selected-date">
+                                <cms-text data-cms="t058"
+                                    >Selecciona una fecha en el calendario</cms-text
+                                >
+                            </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend><cms-text data-cms="t059">Hora del evento *</cms-text></legend>
+                            <p class="small muted">
+                                <cms-text data-cms="t060"
+                                    >Horarios de ejemplo, sujetos a confirmación.</cms-text
+                                >
+                            </p>
+                            <div class="times" id="times"></div>
+                        </fieldset>
+                        <label
+                            ><cms-text data-cms="t061"
+                                >Comentarios sobre el look deseado (opcional)</cms-text
+                            ><textarea
+                                name="comentarios"
+                                placeholder="Cuéntame qué estilo te imaginas: natural, glam, tonos cálidos, referencias…"
+                                rows="4"
+                            ></textarea></label
+                        ><button class="pill primary full" type="submit">
+                            <cms-text data-cms="t062">Ver resumen y continuar →</cms-text>
+                        </button>
+                        <p class="small muted">
+                            <cms-text data-cms="t063"
+                                >Tus datos permanecen en esta página; no se envían ni se
+                                guardan.</cms-text
+                            >
+                        </p>
+                        <p id="booking-error" role="alert"></p>
+                    </form>
+                </div>
+            </section>
+            <section class="tinted" id="cotizacion-grupos">
+                <div class="narrow">
+                    <p class="eyebrow"><cms-text data-cms="t064">Cotización grupal</cms-text></p>
+                    <h2>
+                        <cms-text data-cms="t065"
+                            >Calcula tu cotización para grupos y novias</cms-text
+                        >
+                    </h2>
+                    <p class="section-intro">
+                        <cms-text data-cms="t066"
+                            >Ajusta el número de acompañantes y los servicios adicionales. El total
+                            se actualiza al instante.</cms-text
+                        >
+                    </p>
+                    <div class="panel group-panel">
+                        <div>
+                            <p>
+                                <cms-text data-cms="t067"
+                                    >Acompañantes / damas adicionales</cms-text
+                                >
+                            </p>
+                            <p class="small muted">
+                                <cms-text data-cms="t068">$800.00 por persona adicional.</cms-text>
+                            </p>
+                            <div class="counter">
+                                <button aria-label="Quitar un acompañante" disabled id="minus">
+                                    <cms-text data-cms="t069">−</cms-text></button
+                                ><output id="count"><cms-text data-cms="t070">0</cms-text></output
+                                ><button aria-label="Agregar un acompañante" id="plus">
+                                    <cms-text data-cms="t071">+</cms-text>
+                                </button>
+                            </div>
+                            <p><cms-text data-cms="t072">Servicios adicionales</cms-text></p>
+                            <label class="choice"
+                                ><input id="hair" type="checkbox" /><cms-text data-cms="t073">
+                                    Servicio de Peinado </cms-text
+                                ><span
+                                    ><cms-text data-cms="t074">+$600.00 por persona</cms-text></span
+                                ></label
+                            ><label class="choice"
+                                ><input id="trial" type="checkbox" /><cms-text data-cms="t075">
+                                    Prueba de Maquillaje Novia </cms-text
+                                ><span><cms-text data-cms="t076">+$1,200.00</cms-text></span></label
+                            >
+                        </div>
+                        <div class="breakdown">
+                            <h4><cms-text data-cms="t077">DESGLOSE</cms-text></h4>
+                            <dl aria-live="polite" id="breakdown"></dl>
+                            <button class="pill primary full" id="group-whatsapp">
+                                <cms-text data-cms="t078"
+                                    >Enviar esta cotización por WhatsApp</cms-text
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contacto">
+                <div class="container contact-grid">
+                    <div>
+                        <p class="eyebrow"><cms-text data-cms="t079">Contacto</cms-text></p>
+                        <h2><cms-text data-cms="t080">Hablemos de tu evento</cms-text></h2>
+                        <p class="section-intro">
+                            <svg
+                                aria-hidden="true"
+                                class="icon"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                viewbox="0 0 24 24"
+                            >
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle></svg
+                            ><cms-text data-cms="t081">
+                                Servicio a domicilio en Guadalajara y su área metropolitana:
+                                Zapopan, Tlaquepaque, Tonalá, Tlajomulco de Zúñiga y El
+                                Salto.</cms-text
+                            >
+                        </p>
+                        <div class="socials">
+                            <a
+                                class="pill primary"
+                                href="https://wa.me/523330144428"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                ><cms-text data-cms="t082">WhatsApp ↗</cms-text></a
+                            ><button class="pill white" data-social="Instagram">
+                                <cms-text data-cms="t083">Instagram</cms-text></button
+                            ><button class="pill white" data-social="Facebook">
+                                <cms-text data-cms="t084">Facebook</cms-text></button
+                            ><button class="pill white" data-social="TikTok">
+                                <cms-text data-cms="t085">TikTok</cms-text>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><cms-text data-cms="t086">Lo que dicen mis clientas</cms-text></h3>
+                        <div class="testimonials">
+                            <figure>
+                                <div aria-label="5 de 5 estrellas" class="stars">
+                                    <cms-text data-cms="t087">★★★★★</cms-text>
+                                </div>
+                                <figcaption>
+                                    <img
+                                        alt="Placeholder de Mariana"
+                                        data-image="assets/testimonio-mariana.svg"
+                                        src="assets/testimonio-mariana.svg"
+                                    />
+                                    <div>
+                                        <cms-text data-cms="t088">Mariana G.</cms-text>
+                                        <p><cms-text data-cms="t089">Boda en Zapopan</cms-text></p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <div aria-label="5 de 5 estrellas" class="stars">
+                                    <cms-text data-cms="t090">★★★★★</cms-text>
+                                </div>
+                                <figcaption>
+                                    <img
+                                        alt="Placeholder de Fernanda"
+                                        data-image="assets/testimonio-fernanda.svg"
+                                        src="assets/testimonio-fernanda.svg"
+                                    />
+                                    <div>
+                                        <cms-text data-cms="t091">Fernanda R.</cms-text>
+                                        <p>
+                                            <cms-text data-cms="t092"
+                                                >XV años en Tlaquepaque</cms-text
+                                            >
+                                        </p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <div aria-label="5 de 5 estrellas" class="stars">
+                                    <cms-text data-cms="t093">★★★★★</cms-text>
+                                </div>
+                                <figcaption>
+                                    <img
+                                        alt="Placeholder de Alejandra"
+                                        data-image="assets/testimonio-alejandra.svg"
+                                        src="assets/testimonio-alejandra.svg"
+                                    />
+                                    <div>
+                                        <cms-text data-cms="t094">Alejandra M.</cms-text>
+                                        <p>
+                                            <cms-text data-cms="t095"
+                                                >Sesión de fotos en Guadalajara</cms-text
+                                            >
+                                        </p>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-top">
+                    <a href="#inicio"
+                        ><img
+                            alt="Tamara Aldrete"
+                            class="nav-logo"
+                            data-image="assets/logo-placeholder.svg"
+                            src="assets/logo-placeholder.svg"
+                    /></a>
+                    <div class="socials">
+                        <a
+                            href="https://wa.me/523330144428"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            ><cms-text data-cms="t096">WhatsApp ↗</cms-text></a
+                        ><button data-social="Instagram">
+                            <cms-text data-cms="t097">Instagram</cms-text></button
+                        ><button data-social="Facebook">
+                            <cms-text data-cms="t098">Facebook</cms-text></button
+                        ><button data-social="TikTok">
+                            <cms-text data-cms="t099">TikTok</cms-text>
+                        </button>
+                    </div>
+                </div>
+                <p>
+                    <cms-text data-cms="t100"
+                        >Maquillaje profesional a domicilio. Agenda sujeta a disponibilidad; se
+                        recomienda reservar con 2–4 semanas de anticipación.</cms-text
+                    >
+                </p>
+                <p>
+                    <cms-text data-cms="t101">© </cms-text
+                    ><span id="year"><cms-text data-cms="t102">2026</cms-text></span
+                    ><cms-text data-cms="t103">
+                        Tamara Aldrete · Maquillaje profesional en Guadalajara, Jalisco,
+                        México</cms-text
+                    >
+                </p>
+            </div>
+        </footer>
+        <div class="floating">
+            <div id="chat-message">
+                <button aria-label="Cerrar mensaje" id="chat-close">
+                    <cms-text data-cms="t104">×</cms-text></button
+                ><cms-text data-cms="t105">¿Dudas sobre tu evento?</cms-text><br /><cms-text
+                    data-cms="t106"
+                    >¡Hablemos aquí!</cms-text
+                >
+            </div>
+            <button aria-label="Escríbeme por WhatsApp" class="chat-button" id="floating-whatsapp">
+                <svg
+                    aria-hidden="true"
+                    class="icon"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewbox="0 0 24 24"
+                >
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                </svg>
+            </button>
+        </div>
+        <dialog aria-label="Menú principal" class="drawer" id="mobile-menu">
+            <button aria-label="Cerrar menú" class="close" data-close>
+                <cms-text data-cms="t107">×</cms-text></button
+            ><img
+                alt="Tamara Aldrete"
+                class="nav-logo"
+                data-image="assets/logo-placeholder.svg"
+                src="assets/logo-placeholder.svg"
+            />
+            <nav>
+                <a href="#inicio"><cms-text data-cms="t108">Inicio</cms-text></a
+                ><a href="#servicios"><cms-text data-cms="t109">Servicios</cms-text></a
+                ><a href="#cotizar"><cms-text data-cms="t110">Cotizar</cms-text></a
+                ><a href="#contacto"><cms-text data-cms="t111">Contacto</cms-text></a
+                ><button class="pill white" data-tutorial>
+                    <cms-text data-cms="t112">Tutorial de bienvenida</cms-text></button
+                ><button class="pill white" data-admin>
+                    <cms-text data-cms="t113">Admin</cms-text></button
+                ><a class="pill primary" href="#servicios"
+                    ><cms-text data-cms="t114">Agenda tu cita</cms-text></a
+                >
+            </nav>
+        </dialog>
+        <dialog aria-labelledby="modal-title" id="modal">
+            <button aria-label="Cerrar ventana" class="close" data-close>
+                <cms-text data-cms="t115">×</cms-text>
+            </button>
+            <div id="modal-body"></div>
+        </dialog>
+        <dialog aria-label="Foto ampliada" class="lightbox" id="lightbox">
+            <button aria-label="Cerrar vista ampliada" class="close" data-close>
+                <cms-text data-cms="t116">×</cms-text>
+            </button>
+            <div class="zoom-tools">
+                <button aria-label="Acercar" id="zoom-in">
+                    <cms-text data-cms="t117">+</cms-text></button
+                ><button aria-label="Alejar" id="zoom-out">
+                    <cms-text data-cms="t118">−</cms-text>
+                </button>
+            </div>
+            <div class="lightbox-image"><img alt="Placeholder de galería" id="large-photo" /></div>
+            <div class="gallery-controls">
+                <button aria-label="Foto anterior ampliada" id="large-prev">
+                    <cms-text data-cms="t119">‹</cms-text></button
+                ><output id="large-count"></output
+                ><button aria-label="Foto siguiente ampliada" id="large-next">
+                    <cms-text data-cms="t120">›</cms-text>
+                </button>
+            </div>
+        </dialog>
+        <noscript>
+            <p class="notice">
+                Activa JavaScript para ver el catálogo y utilizar las herramientas de cotización.
+            </p>
+        </noscript>
+    </body>
+</html>
