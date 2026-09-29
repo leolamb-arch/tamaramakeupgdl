@@ -1,4 +1,5 @@
 """SQLite locally; PostgreSQL in a private schema when DATABASE_URL is set."""
+
 import json
 import re
 import sqlite3
@@ -21,8 +22,10 @@ CREATE TABLE IF NOT EXISTS panel_records(collection TEXT NOT NULL,id TEXT NOT NU
 CREATE TABLE IF NOT EXISTS panel_history(id INTEGER PRIMARY KEY,created REAL NOT NULL,"user" TEXT NOT NULL,collection TEXT NOT NULL,record_id TEXT NOT NULL,previous TEXT NOT NULL);
 """
 
+
 def db():
     return current_app.db()
+
 
 def on_rollback(callback):
     callbacks = _rollback.get()
@@ -30,24 +33,31 @@ def on_rollback(callback):
         raise RuntimeError("La subida necesita una transacción de base de datos.")
     callbacks.append(callback)
 
+
 class Row(dict):
     """Retain both named and positional access used by the existing SQLite code."""
+
     def __getitem__(self, key):
         if isinstance(key, (int, slice)):
             return tuple(self.values())[key]
         return super().__getitem__(key)
 
+
 def row_factory(cursor):
     columns = [c.name for c in cursor.description] if cursor.description else []
     return lambda values: Row(zip(columns, values))
+
 
 def postgres_sql(sql):
     # Only static application SQL enters here; values remain bound parameters.
     # Preserve quoted strings/identifiers while adapting placeholders and USER.
     tokens = re.split(r"('(?:''|[^'])*'|\"(?:\"\"|[^\"])*\")", sql)
     for i in range(0, len(tokens), 2):
-        tokens[i] = re.sub(r"\buser\b", '\"user\"', tokens[i], flags=re.I).replace("?", "%s")
+        tokens[i] = re.sub(r"\buser\b", '"user"', tokens[i], flags=re.I).replace(
+            "?", "%s"
+        )
     return "".join(tokens).replace("ORDER BY rowid", "ORDER BY sort_id")
+
 
 class PostgresConnection:
     def __init__(self, connection):
@@ -56,12 +66,15 @@ class PostgresConnection:
     def execute(self, sql, params=()):
         if sql.strip().upper() == "BEGIN IMMEDIATE":
             # Same serialization boundary as SQLite's write transaction.
-            return self.connection.execute("SELECT pg_advisory_xact_lock(%s)", (WRITE_LOCK,))
+            return self.connection.execute(
+                "SELECT pg_advisory_xact_lock(%s)", (WRITE_LOCK,)
+            )
         return self.connection.execute(postgres_sql(sql), params or None)
 
     def executemany(self, sql, params):
         with self.connection.cursor() as cursor:
             cursor.executemany(postgres_sql(sql), params)
+
 
 def configure_database(app):
     url = app.config["DATABASE_URL"]
@@ -77,10 +90,19 @@ def configure_database(app):
         try:
             if url:
                 import psycopg
+
                 try:
-                    raw = psycopg.connect(url, connect_timeout=15, sslmode="require", row_factory=row_factory, prepare_threshold=None)
+                    raw = psycopg.connect(
+                        url,
+                        connect_timeout=15,
+                        sslmode="require",
+                        row_factory=row_factory,
+                        prepare_threshold=None,
+                    )
                 except psycopg.Error:
-                    raise RuntimeError("No se pudo conectar a PostgreSQL. Revisa DATABASE_URL y el estado del proyecto.") from None
+                    raise RuntimeError(
+                        "No se pudo conectar a PostgreSQL. Revisa DATABASE_URL y el estado del proyecto."
+                    ) from None
                 with raw:
                     raw.execute("SET LOCAL search_path TO tamara, pg_catalog")
                     raw.execute("SET LOCAL statement_timeout TO '30s'")
@@ -99,7 +121,9 @@ def configure_database(app):
                 try:
                     callback()
                 except Exception:
-                    app.logger.warning("No se pudo limpiar una imagen de una operación cancelada.")
+                    app.logger.warning(
+                        "No se pudo limpiar una imagen de una operación cancelada."
+                    )
             raise
         finally:
             _rollback.reset(token)
@@ -112,19 +136,38 @@ def configure_database(app):
             c.execute("REVOKE ALL ON SCHEMA tamara FROM PUBLIC")
             # Supabase browser roles must never reach the application's tables.
             for role in ("anon", "authenticated"):
-                if c.execute("SELECT 1 FROM pg_roles WHERE rolname=?", (role,)).fetchone():
+                if c.execute(
+                    "SELECT 1 FROM pg_roles WHERE rolname=?", (role,)
+                ).fetchone():
                     c.execute(f"REVOKE ALL ON SCHEMA tamara FROM {role}")
             schema = SCHEMA.replace("REAL", "DOUBLE PRECISION")
             for table in ("history", "panel_history"):
-                schema = schema.replace(f"{table}(id INTEGER PRIMARY KEY", f"{table}(id BIGSERIAL PRIMARY KEY")
-            schema = schema.replace("PRIMARY KEY(collection,id)", "sort_id BIGSERIAL,PRIMARY KEY(collection,id)")
+                schema = schema.replace(
+                    f"{table}(id INTEGER PRIMARY KEY",
+                    f"{table}(id BIGSERIAL PRIMARY KEY",
+                )
+            schema = schema.replace(
+                "PRIMARY KEY(collection,id)",
+                "sort_id BIGSERIAL,PRIMARY KEY(collection,id)",
+            )
             for statement in schema.split(";"):
                 if statement.strip():
                     c.execute(statement)
-            for table in ("admins", "sessions", "attempts", "state", "history", "media", "panel_records", "panel_history"):
+            for table in (
+                "admins",
+                "sessions",
+                "attempts",
+                "state",
+                "history",
+                "media",
+                "panel_records",
+                "panel_history",
+            ):
                 c.execute(f"ALTER TABLE {table} ENABLE ROW LEVEL SECURITY")
                 c.execute(f"REVOKE ALL ON TABLE {table} FROM PUBLIC")
         else:
             c.executescript(SCHEMA)
         data = json.dumps(DEFAULT, ensure_ascii=False)
-        c.execute("INSERT INTO state VALUES(1,?,?,0) ON CONFLICT(id) DO NOTHING", (data, data))
+        c.execute(
+            "INSERT INTO state VALUES(1,?,?,0) ON CONFLICT(id) DO NOTHING", (data, data)
+        )
