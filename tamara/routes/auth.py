@@ -65,6 +65,7 @@ def login():
         abort(401, description="Usuario o contraseña incorrectos.")
     with db() as c:
         c.execute("DELETE FROM attempts WHERE scope=?", (account,))
+        c.execute("DELETE FROM attempts WHERE scope=? AND created=?", (scope, now))
     return session_response(jsonify(ok=True), name)
 
 
