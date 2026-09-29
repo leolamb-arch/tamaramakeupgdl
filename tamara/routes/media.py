@@ -6,12 +6,10 @@ import secrets
 import time
 from flask import (
     Blueprint,
-    current_app,
     request,
     g,
     abort,
     jsonify,
-    send_from_directory,
 )
 from ..database import db
 from ..services.content import state, public_content
@@ -24,7 +22,6 @@ bp = Blueprint("media", __name__)
 
 @bp.post("/api/admin/upload")
 def upload():
-    directory = current_app.config["DATA_DIR"]
     f = request.files.get("file")
     if not f:
         abort(400, description="Selecciona una imagen.")
@@ -35,20 +32,24 @@ def upload():
     name = secrets.token_hex(16) + ".webp"
     with db() as c:
         w, h = storage.save_pair(clean, name)
-        c.execute("INSERT INTO media VALUES(?,?,?,?,?)", (name, time.time(), g.session["user"], w, h))
+        c.execute(
+            "INSERT INTO media VALUES(?,?,?,?,?)",
+            (name, time.time(), g.session["user"], w, h),
+        )
     return jsonify(src="/media/" + name, width=w, height=h)
 
 
 @bp.get("/media/<name>")
 def media(name):
-    directory = current_app.config["DATA_DIR"]
     if not re.fullmatch(r"[a-f0-9]{32}(-thumb)?\.webp", name):
         abort(404)
     base = name.replace("-thumb", "")
     if not g.session or not g.session["user"]:
         published = public_content(json.loads(state()["published"]))
-        allowed={v["src"] for v in published["images"].values()}
-        allowed.update(item.get('photo','') for item in public_settings().get('testimonials',[]))
+        allowed = {v["src"] for v in published["images"].values()}
+        allowed.update(
+            item.get("photo", "") for item in public_settings().get("testimonials", [])
+        )
         if "/media/" + base not in allowed:
             abort(404)
     return storage.serve(name)
