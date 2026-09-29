@@ -35,8 +35,8 @@ def number(value, maximum=1_000_000):
 
 
 def image_path(src, c):
-    if src in DEFAULT["images"]:
-        return src
+    if isinstance(src, str) and src.lstrip("/") in DEFAULT["images"]:
+        return src.lstrip("/")
     if (
         isinstance(src, str)
         and re.fullmatch(r"/media/[a-f0-9]{32}\.webp", src)
@@ -49,7 +49,7 @@ def image_path(src, c):
 
 
 def validate(data):
-    if not isinstance(data, dict) or set(data) != set(DEFAULT):
+    if not isinstance(data, dict) or set(data) - {"_panel"} != set(DEFAULT):
         raise ValueError("Estructura de contenido incorrecta.")
     if set(data["texts"]) != set(DEFAULT["texts"]):
         raise ValueError("Faltan campos de contenido.")
@@ -63,13 +63,9 @@ def validate(data):
     for k in DEFAULT["theme"]:
         v = theme[k]
         if k in ["font", "heading"]:
-            if v not in [
-                "Outfit",
-                "Pinyon Script",
-                "Georgia",
-                "Arial",
-                "system-ui", "Cormorant Garamond", "Jost", "Playfair Display", "Bodoni Moda", "Prata", "Marcellus", "DM Serif Display", "Lora", "Montserrat", "Poppins", "Inter", "Lato", "Raleway", "Work Sans",
-            ]:
+            from .services.reference_panel import FONT_NAMES
+
+            if v not in FONT_NAMES:
                 raise ValueError("Tipografía no permitida.")
         elif not isinstance(v, str) or not re.fullmatch("#[0-9a-fA-F]{6}", v):
             raise ValueError("Color inválido.")
