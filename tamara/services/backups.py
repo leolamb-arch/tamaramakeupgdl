@@ -10,6 +10,8 @@ from pathlib import Path
 
 
 def backup(app, target):
+    if app.config.get("DATABASE_URL") or app.config.get("SUPABASE_URL"):
+        raise ValueError("Las copias SQLite no pueden usarse con Supabase; consulta DESPLIEGUE.md.")
     target.mkdir(parents=True, exist_ok=False)
     try:
         with (
@@ -76,6 +78,8 @@ def validate_backup(folder):
 
 def restore(app, target):
     """Recover normal I/O failures; the server must remain stopped during this operation."""
+    if app.config.get("DATABASE_URL") or app.config.get("SUPABASE_URL"):
+        raise ValueError("Las copias SQLite no pueden usarse con Supabase; consulta DESPLIEGUE.md.")
     data = app.config["DATA_DIR"]
     validate_backup(target)
     with tempfile.TemporaryDirectory(prefix="tamara-restore-", dir=data) as temp:

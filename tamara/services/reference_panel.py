@@ -48,12 +48,11 @@ def records(c, collection):
 
 def put(c, collection, identity, data, version=1):
     packed=json.dumps({k:v for k,v in data.items() if k not in ('id','_version')},ensure_ascii=False)
-    c.execute('INSERT INTO panel_records VALUES(?,?,?,?) ON CONFLICT(collection,id) DO UPDATE SET data=excluded.data,version=excluded.version',(collection,identity,packed,version))
+    c.execute('INSERT INTO panel_records(collection,id,data,version) VALUES(?,?,?,?) ON CONFLICT(collection,id) DO UPDATE SET data=excluded.data,version=excluded.version',(collection,identity,packed,version))
 
 def initialize(app):
     with app.app_context(), db() as c:
-        c.executescript('''CREATE TABLE IF NOT EXISTS panel_records(collection TEXT NOT NULL,id TEXT NOT NULL,data TEXT NOT NULL,version INTEGER NOT NULL,PRIMARY KEY(collection,id));
-        CREATE TABLE IF NOT EXISTS panel_history(id INTEGER PRIMARY KEY,created REAL NOT NULL,user TEXT NOT NULL,collection TEXT NOT NULL,record_id TEXT NOT NULL,previous TEXT NOT NULL);''')
+        c.execute('BEGIN IMMEDIATE')
         if c.execute('SELECT 1 FROM panel_records LIMIT 1').fetchone(): return
         data=json.loads(c.execute('SELECT published FROM state WHERE id=1').fetchone()[0])
         site=copy.deepcopy(REFERENCE['rr'])
