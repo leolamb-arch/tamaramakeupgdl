@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/reference-assets/font-c8420ecf9b1ae593.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/reference-assets/font-bb6b2b677a0d1c1d.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/reference-assets/font-773f69a467cd70f3.woff2) format('truetype');
+}
