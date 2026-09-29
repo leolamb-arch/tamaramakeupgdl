@@ -22,7 +22,6 @@ def session_response(response, user=None):
     ttl = current_app.config["SESSION_SECONDS"]
     idle = current_app.config["SESSION_IDLE_SECONDS"]
     production = current_app.config["PRODUCTION"]
-    origin = current_app.config["ORIGIN"]
     token = secrets.token_urlsafe(48)
     csrf = secrets.token_urlsafe(32)
     now = time.time()
@@ -53,13 +52,11 @@ def require_admin():
 
 
 def guard():
-    ttl = current_app.config["SESSION_SECONDS"]
     idle = current_app.config["SESSION_IDLE_SECONDS"]
-    production = current_app.config["PRODUCTION"]
     origin = current_app.config["ORIGIN"]
     g.session = None
     token = request.cookies.get("tamara_session", "")
-    if token:
+    if token and request.endpoint != "public.static_file":
         with db() as c:
             g.session = c.execute(
                 "SELECT * FROM sessions WHERE token=? AND expires>? AND seen>?",
@@ -104,6 +101,8 @@ def security(response):
         response.headers["Cache-Control"] = "no-store"
     if current_app.config["PRODUCTION"]:
         response.headers["Strict-Transport-Security"] = "max-age=31536000"
+    if request.path.startswith(("/admin", "/api/", "/login", "/preview")):
+        response.headers["X-Robots-Tag"] = "noindex, nofollow"
     return response
 
 
