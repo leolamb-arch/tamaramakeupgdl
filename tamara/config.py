@@ -12,7 +12,10 @@ DEFAULT = json.loads((ROOT / "content/defaults.json").read_text(encoding="utf-8"
 def settings(data_dir=None):
     origin = os.environ.get("APP_ORIGIN", "http://127.0.0.1:8765").rstrip("/")
     parsed = urlsplit(origin)
-    production = os.environ.get("APP_ENV") == "production"
+    environment = os.environ.get("APP_ENV", "development")
+    if environment not in ("development", "production"):
+        raise RuntimeError("APP_ENV debe ser development o production.")
+    production = environment == "production"
     secret = os.environ.get("APP_SECRET", "")
     if len(secret) < 32:
         raise RuntimeError(
@@ -37,25 +40,63 @@ def settings(data_dir=None):
     if ttl <= 0 or idle <= 0:
         raise RuntimeError("Los tiempos de sesión deben ser positivos.")
     # An explicit data directory keeps local tools/tests isolated from cloud data.
-    database_url = "" if data_dir is not None else os.environ.get("DATABASE_URL", "").strip()
-    storage_url = "" if data_dir is not None else os.environ.get("SUPABASE_URL", "").rstrip("/")
-    storage_key = "" if data_dir is not None else os.environ.get("SUPABASE_SECRET_KEY", "")
-    bucket = "" if data_dir is not None else os.environ.get("SUPABASE_STORAGE_BUCKET", "")
+    database_url = (
+        "" if data_dir is not None else os.environ.get("DATABASE_URL", "").strip()
+    )
+    storage_url = (
+        "" if data_dir is not None else os.environ.get("SUPABASE_URL", "").rstrip("/")
+    )
+    storage_key = (
+        "" if data_dir is not None else os.environ.get("SUPABASE_SECRET_KEY", "")
+    )
+    bucket = (
+        "" if data_dir is not None else os.environ.get("SUPABASE_STORAGE_BUCKET", "")
+    )
     if database_url and urlsplit(database_url).scheme not in ("postgres", "postgresql"):
         raise RuntimeError("DATABASE_URL debe ser una conexión PostgreSQL.")
-    if any((storage_url, storage_key, bucket)) and not all((storage_url, storage_key, bucket)):
-        raise RuntimeError("Completa SUPABASE_URL, SUPABASE_SECRET_KEY y SUPABASE_STORAGE_BUCKET.")
+    if any((storage_url, storage_key, bucket)) and not all(
+        (storage_url, storage_key, bucket)
+    ):
+        raise RuntimeError(
+            "Completa SUPABASE_URL, SUPABASE_SECRET_KEY y SUPABASE_STORAGE_BUCKET."
+        )
     if storage_url:
         endpoint = urlsplit(storage_url)
-        if endpoint.scheme != "https" or not endpoint.hostname or endpoint.path or endpoint.query or endpoint.fragment or endpoint.username or endpoint.password:
-            raise RuntimeError("SUPABASE_URL debe ser un origen HTTPS sin ruta ni credenciales.")
+        if (
+            endpoint.scheme != "https"
+            or not endpoint.hostname
+            or endpoint.path
+            or endpoint.query
+            or endpoint.fragment
+            or endpoint.username
+            or endpoint.password
+        ):
+            raise RuntimeError(
+                "SUPABASE_URL debe ser un origen HTTPS sin ruta ni credenciales."
+            )
         if not storage_key.startswith("sb_secret_"):
-            raise RuntimeError("SUPABASE_SECRET_KEY debe ser una Secret key (sb_secret_).")
-        if not bucket or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-_" for c in bucket):
+            raise RuntimeError(
+                "SUPABASE_SECRET_KEY debe ser una Secret key (sb_secret_)."
+            )
+        if not bucket or any(
+            c not in "abcdefghijklmnopqrstuvwxyz0123456789-_" for c in bucket
+        ):
             raise RuntimeError("Nombre de bucket inválido.")
-    if production and data_dir is None and os.environ.get("RENDER") == "true" and not all((database_url, storage_url, storage_key, bucket)):
-        raise RuntimeError("Render necesita PostgreSQL y Storage configurados; no se usarán datos temporales.")
+    if (
+        production
+        and data_dir is None
+        and os.environ.get("RENDER") == "true"
+        and not all((database_url, storage_url, storage_key, bucket))
+    ):
+        raise RuntimeError(
+            "Render necesita PostgreSQL y Storage configurados; no se usarán datos temporales."
+        )
+    threads = int(os.environ.get("WAITRESS_THREADS", "8"))
+    if not 1 <= threads <= 64:
+        raise RuntimeError("WAITRESS_THREADS debe estar entre 1 y 64.")
     return dict(
+        WAITRESS_THREADS=threads,
+        TRUSTED_PROXY_CIDRS=os.environ.get("TRUSTED_PROXY_CIDRS", ""),
         DATABASE_URL=database_url,
         SUPABASE_URL=storage_url,
         SUPABASE_SECRET_KEY=storage_key,
