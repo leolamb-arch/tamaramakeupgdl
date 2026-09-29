@@ -7,6 +7,7 @@ from flask import Blueprint, abort, current_app, g, jsonify, request
 from ..database import db
 from ..services import reference_panel as panel
 from ..services.images import decode_image
+from ..services import storage
 
 bp = Blueprint('reference_panel', __name__)
 
@@ -15,11 +16,7 @@ def upload(file, c):
     if len(raw)>8*1024*1024:abort(413,description='Máximo 8 MB por imagen.')
     image=decode_image(raw)
     name=secrets.token_hex(16)+'.webp'
-    directory=current_app.config['DATA_DIR']/'uploads'
-    image.save(directory/name,'WEBP',quality=85)
-    width,height=image.size
-    image.thumbnail((480,480))
-    image.save(directory/name.replace('.webp','-thumb.webp'),'WEBP',quality=80)
+    width,height=storage.save_pair(image,name)
     c.execute('INSERT INTO media VALUES(?,?,?,?,?)',(name,time.time(),g.session['user'],width,height))
     return '/media/'+name
 
