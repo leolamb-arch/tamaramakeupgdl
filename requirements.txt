@@ -3,3 +3,4 @@ argon2-cffi==25.1.0
 waitress==3.0.2
 beautifulsoup4==4.15.0
 Pillow==12.3.0
+gunicorn
