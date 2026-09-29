@@ -15,6 +15,7 @@ def state():
 
 def public_content(data):
     data = json.loads(json.dumps(data))
+    data.pop("_panel", None)
     data["services"] = [s for s in data["services"] if s["status"] == "visible"]
     used = set(DEFAULT["images"]) - set(
         v for s in DEFAULT["services"] for v in s["images"]
@@ -26,7 +27,7 @@ def public_content(data):
 
 def update(action, content=None, version=None):
     body = json_body()
-    if content is None and action == "draft":
+    if content is None and action in ("draft", "full"):
         try:
             content = validate(body.get("content"))
         except (ValueError, KeyError, TypeError, AttributeError) as e:
@@ -48,23 +49,43 @@ def update(action, content=None, version=None):
             )
         if action == "publish":
             content = json.loads(row["draft"])
-        if action == "restore":
+        if action in ("restore", "restore-publish"):
             old = c.execute(
                 "SELECT content FROM history WHERE id=?", (version,)
             ).fetchone()
             if not old:
                 abort(404)
             content = json.loads(old["content"])
+        from .snapshots import capture, project, install
+
+        previous_snapshot = capture(c, json.loads(row["draft"]))
+
+        if action in ("draft", "full"):
+            content = project(c, content, json.loads(row["draft"]))
+        if action in ("publish", "full", "restore-publish"):
+            content = install(c, content)
+        elif "_panel" not in content:
+            content = project(c, content)
         packed = json.dumps(content, ensure_ascii=False)
         # Record the previous draft as well, so the first save can be undone.
         if not c.execute("SELECT 1 FROM history LIMIT 1").fetchone():
             c.execute(
                 "INSERT INTO history(created,user,action,content) VALUES(?,?,?,?)",
-                (time.time(), g.session["user"], "original", row["draft"]),
+                (
+                    time.time(),
+                    g.session["user"],
+                    "original",
+                    json.dumps(previous_snapshot, ensure_ascii=False),
+                ),
             )
         c.execute(
             "UPDATE state SET draft=?,published=?,revision=revision+1 WHERE id=1",
-            (packed, packed if action == "publish" else row["published"]),
+            (
+                packed,
+                packed
+                if action in ("publish", "full", "restore-publish")
+                else row["published"],
+            ),
         )
         c.execute(
             "INSERT INTO history(created,user,action,content) VALUES(?,?,?,?)",
