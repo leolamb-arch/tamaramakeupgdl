@@ -75,12 +75,4 @@ def reset_access():
 
 
 if __name__ == "__main__":
-    try:
-        reset_access()
-    except Exception:
-        print(
-            "No se pudo recuperar el acceso. "
-            "Revisa la conexión y la versión desplegada.",
-            file=sys.stderr,
-        )
-        raise SystemExit(1) from None
+    reset_access()
