@@ -1,0 +1,15 @@
+{
+  "retrieved": "2026-09-28",
+  "site": "https://tamaramakeupgdl.com/admin",
+  "javascript": {
+    "url": "https://tamaramakeupgdl.com/assets/index-D1nz-kmY.js",
+    "note": "Formateado antes de calcular la huella; adaptador de datos y rutas modificados en panel.js",
+    "sha256": "3eb8bfd0696783b08989c0ac9a94439aef1406f1a5837b1957e80cb51388fdb9"
+  },
+  "stylesheet": {
+    "url": "https://tamaramakeupgdl.com/assets/index-D2-qM5P8.css",
+    "sha256": "34ca297f55d54fe7b2dc57b7f38fe10b4b87bf8e68e9fdee87294ebacc2a5626"
+  },
+  "photos_downloaded": false,
+  "private_production_data_imported": false
+}
