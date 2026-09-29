@@ -14,6 +14,8 @@ def create_app(data_dir=None, testing=False):
     configure_database(app)
     from .services.reference_panel import initialize
     initialize(app)
+    from .services.bootstrap import initialize_admin
+    initialize_admin(app)
 
     def validate_content(data):
         with app.app_context():
