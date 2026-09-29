@@ -28,6 +28,7 @@ def main():
         ):
             raise SystemExit("Contraseña corta o confirmación distinta.")
         with app.db() as c:
+            c.execute("BEGIN IMMEDIATE")
             exists = c.execute("SELECT 1 FROM admins WHERE name=?", (user,)).fetchone()
             if args.command == "create-admin":
                 if c.execute("SELECT 1 FROM admins").fetchone():
@@ -54,12 +55,14 @@ def main():
         print("Tamara disponible en " + origin, flush=True)
         serve(
             app,
-            host="127.0.0.1",
+            host="0.0.0.0" if app.config["PRODUCTION"] else "127.0.0.1",
             port=port,
             threads=4,
             max_request_body_size=9 * 1024 * 1024,
         )
     else:
+        if app.config["DATABASE_URL"] or app.config["SUPABASE_URL"]:
+            raise SystemExit("Estos comandos de copia/restauración son solo para SQLite local. Para Supabase consulta DESPLIEGUE.md.")
         if not args.path:
             raise SystemExit("Indica --path con una carpeta de copia de seguridad.")
         target = Path(args.path).resolve()
