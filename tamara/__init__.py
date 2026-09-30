@@ -39,7 +39,7 @@ def create_app(data_dir=None, testing=False):
     def unexpected(error):
         if app.testing:
             raise error
-        app.logger.error("Solicitud fallida: %s", type(error).__name__)
+        app.logger.exception("Solicitud fallida")
         return jsonify(
             error="No se pudo completar la operación. Intenta de nuevo o contacta al administrador."
         ), 500
