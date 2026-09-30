@@ -1,7 +1,7 @@
 """Authenticated editor endpoints; access is enforced by the global guard."""
 
 import json
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, send_from_directory
 from ..config import ROOT, DEFAULT
 from ..database import db
 from ..services.content import state, update
@@ -48,6 +48,12 @@ def history():
         ).fetchall()
     return jsonify([dict(r) for r in rows])
 
+@bp.get("/reference-assets/<path:filename>")
+def reference_assets(filename):
+    return send_from_directory(
+        ROOT / "static/vendor/reference-admin",
+        filename,
+    )
 
 @bp.get("/api/admin/media")
 def media_list():
